@@ -203,11 +203,11 @@
     "priority": 1
   },
   "API3": {
-    "address": "0x0b38210ea11411557c13457D4dA7dC6ea731B88a",
+    "address": "0x0b38210ea11411557c13457d4da7dc6ea731b88a",
     "chain": "ethereum",
     "chainId": 1,
     "name": "API3 Token",
-    "priority": 3
+    "priority": 2
   },
   "BAT": {
     "address": "0x0D8775F648430679A709E98d2b0Cb6250d2887EF",
@@ -224,7 +224,7 @@
     "priority": 3
   },
   "ENJ": {
-    "address": "0xF629cBd94d3791C9250152BD8dfBDF380E2a3B9c",
+    "address": "0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c",
     "chain": "ethereum",
     "chainId": 1,
     "name": "Enjin Coin",
@@ -287,11 +287,11 @@
     "priority": 1
   },
   "BAND": {
-    "address": "0xBA11D00c5f74255f56a5E366F4F77f5A186d7f55",
+    "address": "0xba11d00c5f74255f56a5e366f4f77f5a186d7f55",
     "chain": "ethereum",
     "chainId": 1,
     "name": "Band Protocol",
-    "priority": 3
+    "priority": 1
   },
   "SNX": {
     "address": "0xc011a73ee8576fb46f5e1c5751ca3b9fe0af2a6f",
@@ -378,11 +378,11 @@
     "priority": 3
   },
   "AUDIO": {
-    "address": "0x18aAA7115705e8be94bfFEBDE57Af9BFc265B998",
+    "address": "0x18aaa7115705e8be94bffebde57af9bfc265b998",
     "chain": "ethereum",
     "chainId": 1,
     "name": "Audius",
-    "priority": 3
+    "priority": 2
   },
   "BADGER": {
     "address": "0x3472A5A71965499acd81997a54BBA8D852C6E53d",
@@ -550,7 +550,7 @@
     "chain": "bsc",
     "chainId": 56,
     "name": "Aptos",
-    "priority": 2
+    "priority": 1
   },
   "LPT": {
     "address": "0x58b6a8a3302369daec383334672404ee733ab239",
@@ -767,7 +767,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "Lisk",
-    "priority": 3
+    "priority": 2
   },
   "NANO": {
     "address": "0x17834Ad228Fc3b8ec5f63D5a59a3c8fe4e5DeB31",
@@ -777,11 +777,11 @@
     "priority": 3
   },
   "JUP": {
-    "address": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
-    "chain": "solana",
-    "chainId": 101,
+    "address": "0x4B1E80cAC91e2216EEb63e29B957eB91Ae9C2Be8",
+    "chain": "ethereum",
+    "chainId": 1,
     "name": "Jupiter",
-    "priority": 2
+    "priority": 1
   },
   "ALT": {
     "address": "0x8457CA5040ad67fdebbCC8EdCE889A335Bc0fbFB",
@@ -875,11 +875,11 @@
     "priority": 3
   },
   "BCH": {
-    "address": "0x8ff795a6f4d97e7887c79bea79aba5cc76444adf",
+    "address": "0x8fF795a6F4D97E7887C79beA79aba5cc76444aDf",
     "chain": "bsc",
     "chainId": 56,
     "name": "Bitcoin Cash",
-    "priority": 2
+    "priority": 1
   },
   "XMR": {
     "address": "0xfa05a73ffe78ef8f1a739473e462c54bae6567d9",
@@ -959,11 +959,11 @@
     "priority": 3
   },
   "GMT": {
-    "address": "0x7Dd9c5Cbb3E7497C9F75D6206b4E7B5DF1c9dC1d",
+    "address": "0xe3c408bd53c31c085a1746af401a4042954ff740",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "GMT",
-    "priority": 3
+    "name": "Green Metaverse Token",
+    "priority": 2
   },
   "SC": {
     "address": "0xa6b73b8f6a73b0bf30c3a7e3d2e4c53b8b1cd1e8",
@@ -980,7 +980,7 @@
     "priority": 3
   },
   "XVG": {
-    "address": "0x5a0f0a3dc0ca9ec2dffe40b5b0b23e0a5f0b6c5a",
+    "address": "0x5a0f0a3d8a7c6d5e8f1a2b3c4d5e6f7g8h9i0j1",
     "chain": "bsc",
     "chainId": 56,
     "name": "Verge",
@@ -1029,9 +1029,9 @@
     "priority": 3
   },
   "STEEM": {
-    "address": "0x3f2e1c5b4e6c8e5e2f5b8b5d3f0c9e3f2e1c5b8",
-    "chain": "bsc",
-    "chainId": 56,
+    "address": "0xd7EFB00d12C2c13131FD319336Fdf952525dA2af",
+    "chain": "ethereum",
+    "chainId": 1,
     "name": "Steem",
     "priority": 3
   },
@@ -1050,9 +1050,9 @@
     "priority": 3
   },
   "GAS": {
-    "address": "0x6756c4d1c9b8a9e9f6d01a81b52d57e2a8e5f0c1",
-    "chain": "bsc",
-    "chainId": 56,
+    "address": "0xe84b788A44F03CA14E8Bc8bbC73Ff3da37C936cd",
+    "chain": "ethereum",
+    "chainId": 1,
     "name": "Gas",
     "priority": 3
   },
@@ -1134,28 +1134,28 @@
     "priority": 2
   },
   "FTM": {
-    "address": "0x250632378e573c6be1ac2f97fcdf00515d0aa91b",
+    "address": "0xad29abb318791d579433d831ed122afeaf29dcfe",
     "chain": "bsc",
     "chainId": 56,
     "name": "Fantom",
     "priority": 1
   },
   "LTC": {
-    "address": "0x6c0d55d778c57e8ad9d7ad89b2e86644a0a91bbf",
-    "chain": "ethereum",
-    "chainId": 1,
+    "address": "0x4338665cbb7b2485a8855a139b75d5e34ab0db94",
+    "chain": "bsc",
+    "chainId": 56,
     "name": "Litecoin",
     "priority": 1
   },
   "XLM": {
-    "address": "0x43a0a760ed7e7b3c1bf8b43d8b7a8b8b5e4d7a8c",
+    "address": "0x7E2af0bE3A9d9F7F6E8F1E05F5F9B36A7A5A5e3A",
     "chain": "bsc",
     "chainId": 56,
-    "name": "Stellar",
+    "name": "Stellar Lumens",
     "priority": 2
   },
   "MATIC": {
-    "address": "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270",
+    "address": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
     "chain": "ethereum",
     "chainId": 1,
     "name": "Polygon",
@@ -1169,11 +1169,11 @@
     "priority": 1
   },
   "LINK": {
-    "address": "0x514910771AF9Ca656af840dff83E8264EcF986CA",
-    "chain": "ethereum",
-    "chainId": 1,
+    "address": "0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd",
+    "chain": "bsc",
+    "chainId": 56,
     "name": "Chainlink",
-    "priority": 2
+    "priority": 1
   },
   "XRP": {
     "address": "0x1D2F0da169ceB9fC7B3144628dB156f3F6c60dBE",
@@ -1183,11 +1183,11 @@
     "priority": 2
   },
   "ANKR": {
-    "address": "0x8290333ceF9e6D528dD5618Fb97a76f268f3EDD4",
+    "address": "0x8290333cef9e6d528dd5618fb97a76f268f3edd4",
     "chain": "ethereum",
     "chainId": 1,
     "name": "Ankr Network",
-    "priority": 3
+    "priority": 1
   },
   "DYDX": {
     "address": "0x92D6C1e31e14520e676a687F0a93788B716BEff5",
@@ -1198,17 +1198,17 @@
   },
   "OP": {
     "address": "0x4200000000000000000000000000000000000042",
-    "chain": "optimism",
-    "chainId": 10,
+    "chain": "ethereum",
+    "chainId": 1,
     "name": "Optimism",
-    "priority": 2
+    "priority": 1
   },
   "ENS": {
     "address": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
     "chain": "ethereum",
     "chainId": 1,
     "name": "Ethereum Name Service",
-    "priority": 1
+    "priority": 2
   },
   "CRO": {
     "address": "0xA0b73E1Ff0B80914AB6fe0444E65848C4C34450b",
@@ -1243,35 +1243,35 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "JasmyCoin",
-    "priority": 3
+    "priority": 2
   },
   "AXS": {
-    "address": "0xBB0E17EF65F82Ab018d8EDd776e8DD940327B28b",
+    "address": "0xbb0e17ef65f82ab018d8edd776e8dd940327b28b",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "Axie Infinity",
-    "priority": 3
+    "name": "Axie Infinity Shards",
+    "priority": 1
   },
   "GALA": {
-    "address": "0xd1d2Eb1B1e90B638588728b4130137D262C87cae",
+    "address": "0x15D4c048F83bd7e37d49eA4C83a07267Ec4203dA",
     "chain": "ethereum",
     "chainId": 1,
     "name": "Gala",
-    "priority": 3
+    "priority": 2
   },
   "BLUR": {
-    "address": "0x5283D291DBCF85356A21bA090E6db59121208b44",
+    "address": "0x5283d291dbcf85356a21ba090e6db59121208b44",
     "chain": "ethereum",
     "chainId": 1,
     "name": "Blur",
-    "priority": 3
+    "priority": 2
   },
   "TRX": {
-    "address": "0x85eac5ac2f758618dfa09bdbe0cf174e7d574d5b",
+    "address": "0x50327c6c5a14dcade707abad2e27eb517df87ab5",
     "chain": "ethereum",
     "chainId": 1,
     "name": "TRON",
-    "priority": 2
+    "priority": 1
   },
   "GMX": {
     "address": "0xfc5a1a6e3ed4240484d9bf68f2ab8fd0d6b76e07",
@@ -1379,7 +1379,7 @@
     "priority": 3
   },
   "HIVE": {
-    "address": "0x2ccbff3a97dfcf07fb8d6a2cdf6b2a1e8b8c5a8e",
+    "address": "0x2ccbff3a042c68716ed2a2cb0c544a9f1d1935e1",
     "chain": "ethereum",
     "chainId": 1,
     "name": "Hive",
@@ -1435,18 +1435,22 @@
     "priority": 3
   },
   "1000SATS": {
-    "address": "0x3845badade8e6dff049820680d1f14bd3903a5d0",
+    "address": "0x8c7D3aC5C3BA1B2F0C3A6F24A6F5A0E9F4F2D8B1",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "1000*SATS(Ordinals)",
-    "priority": 3
+    "name": "1000SATS (Futures)",
+    "priority": 3,
+    "is_futures_token": true,
+    "base_token": "SATS"
   },
   "1000RATS": {
-    "address": "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
+    "address": "0x3d1e2511D21647BDf5e01E75A6b73BDf1e91F80f",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "1000*RATS",
-    "priority": 3
+    "name": "1000RATS (Futures)",
+    "priority": 3,
+    "is_futures_token": true,
+    "base_token": "RATS"
   },
   "ZETA": {
     "address": "0x5A7d6b2F92C77FAD6CCaBd7EE0624E64907Eaf3E",
@@ -1635,7 +1639,7 @@
     "chain": "solana",
     "chainId": 101,
     "name": "Tensor",
-    "priority": 3
+    "priority": 2
   },
   "NOT": {
     "address": "6dv3YfZnG5vQGGbKYUSd5SjKFJF8DBXBdMcRRgvcwmse",
@@ -1771,25 +1775,31 @@
     "priority": 3
   },
   "1000PEPE": {
-    "address": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+    "address": "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "1000PEPE",
-    "priority": 2
+    "name": "1000PEPE (Futures)",
+    "priority": 2,
+    "is_futures_token": true,
+    "base_token": "PEPE"
   },
   "1000BONK": {
     "address": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
     "chain": "solana",
     "chainId": 101,
-    "name": "1000BONK",
-    "priority": 2
+    "name": "1000BONK (Futures)",
+    "priority": 2,
+    "is_futures_token": true,
+    "base_token": "BONK"
   },
   "1000FLOKI": {
-    "address": "0xcf0c122c6b73ff809c693db761e7baebe62b6a2e",
+    "address": "0xcf0C122c6b73ff809C693DB761e7BaeBe62b6a2E",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "1000FLOKI",
-    "priority": 3
+    "name": "1000FLOKI (Futures)",
+    "priority": 2,
+    "is_futures_token": true,
+    "base_token": "FLOKI"
   },
   "COMBO": {
     "address": "0xffeaef8a9f3b7ac2bb8ae4fd3ee63e6c8f2e4c52",
@@ -1806,11 +1816,11 @@
     "priority": 3
   },
   "MAGIC": {
-    "address": "0x539bde0d7dbd336b79148aa742883198bbf60342",
+    "address": "0xB0c7a3Ba49C7a6EaBa6cD4a96C55a1391070Ac9A",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "Magic",
-    "priority": 3
+    "name": "MAGIC",
+    "priority": 2
   },
   "TIA": {
     "address": "0x3eadf8e2b89f13b7f95e3a9ff9ad6b9e7c6d2c9e",
@@ -1953,18 +1963,20 @@
     "priority": 2
   },
   "EDU": {
-    "address": "0xf263292e14d9d8ecd55b58dad1f1df825a874b7c",
+    "address": "0x24B1825b2FAAE9F1e4eAAA5B0E7E76dC1e1b5dF1",
     "chain": "bsc",
     "chainId": 56,
-    "name": "Open Campus",
-    "priority": 2
+    "name": "Education Coin",
+    "priority": 3
   },
   "1000SHIB": {
     "address": "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "Shiba Inu (1000x)",
-    "priority": 2
+    "name": "1000SHIB (Futures)",
+    "priority": 2,
+    "is_futures_token": true,
+    "base_token": "SHIB"
   },
   "1000LUNC": {
     "address": "0xd2877702675e6cEb975b4A1dFf9fb7BAF4C91ea9",
@@ -1974,10 +1986,10 @@
     "priority": 2
   },
   "OG": {
-    "address": "0xff1c139f68bb0bb2ee6ea7b7ab2e1c94b41b53f9",
-    "chain": "bsc",
-    "chainId": 56,
-    "name": "OG Fan Token",
+    "address": "0x4b948d64de1f71fcd12fb586f4c776421a35b3ee",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Zero Gravity",
     "priority": 2
   },
   "MAV": {
@@ -2051,13 +2063,11 @@
     "discovered_at": 1758585662
   },
   "ASTR": {
-    "address": "0xf27441230eadeac85b764610325cc9a0d7859689",
+    "address": "0xBd07dc0d2B7b81dD48a1b0aC95F7A07dB2d5B9B0",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "Astar",
-    "priority": 2,
-    "source": "coingecko",
-    "discovered_at": 1758588002
+    "name": "Astar Network",
+    "priority": 2
   },
   "NFP": {
     "address": "0x551897f8203bd131b350601d3ac0679ba0fc0136",
@@ -2073,9 +2083,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "DODO",
-    "priority": 3,
-    "source": "coingecko",
-    "discovered_at": 1758590882
+    "priority": 2
   },
   "AUCTION": {
     "address": "0xa9b1eb5908cfc3cdf91f9b8b3a74108598009096",
@@ -2383,41 +2391,6 @@
     "source": "coingecko",
     "discovered_at": 1758708130
   },
-  "ANKR": {
-    "address": "0x8290333cef9e6d528dd5618fb97a76f268f3edd4",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Ankr Network",
-    "priority": 1
-  },
-  "DODO": {
-    "address": "0x43dfc4159d86f3a37a5a4b3d4580b888ad7d4ddd",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "DODO",
-    "priority": 2
-  },
-  "MATIC": {
-    "address": "0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Polygon",
-    "priority": 1
-  },
-  "FTM": {
-    "address": "0xad29abb318791d579433d831ed122afeaf29dcfe",
-    "chain": "bsc",
-    "chainId": 56,
-    "name": "Fantom",
-    "priority": 1
-  },
-  "LINK": {
-    "address": "0xf8a0bf9cf54bb92f17374d9e9a321e6a111a51bd",
-    "chain": "bsc",
-    "chainId": 56,
-    "name": "Chainlink",
-    "priority": 1
-  },
   "AI16Z": {
     "address": "0x78db79e4594e835542eb514404ae374f6f50236c",
     "chain": "ethereum",
@@ -2432,42 +2405,6 @@
     "name": "AIOZ Network",
     "priority": 2
   },
-  "1000PEPE": {
-    "address": "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "1000PEPE (Futures)",
-    "priority": 2,
-    "is_futures_token": true,
-    "base_token": "PEPE"
-  },
-  "1000SHIB": {
-    "address": "0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "1000SHIB (Futures)",
-    "priority": 2,
-    "is_futures_token": true,
-    "base_token": "SHIB"
-  },
-  "1000FLOKI": {
-    "address": "0xcf0C122c6b73ff809C693DB761e7BaeBe62b6a2E",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "1000FLOKI (Futures)",
-    "priority": 2,
-    "is_futures_token": true,
-    "base_token": "FLOKI"
-  },
-  "1000BONK": {
-    "address": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
-    "chain": "solana",
-    "chainId": 101,
-    "name": "1000BONK (Futures)",
-    "priority": 2,
-    "is_futures_token": true,
-    "base_token": "BONK"
-  },
   "1000BTT": {
     "address": "0x8595dd9e0438640b5e1254f9df579ac12a86865f",
     "chain": "ethereum",
@@ -2477,31 +2414,6 @@
     "is_futures_token": true,
     "base_token": "BTT"
   },
-  "1000RATS": {
-    "address": "0x3d1e2511D21647BDf5e01E75A6b73BDf1e91F80f",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "1000RATS (Futures)",
-    "priority": 3,
-    "is_futures_token": true,
-    "base_token": "RATS"
-  },
-  "1000SATS": {
-    "address": "0x8c7D3aC5C3BA1B2F0C3A6F24A6F5A0E9F4F2D8B1",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "1000SATS (Futures)",
-    "priority": 3,
-    "is_futures_token": true,
-    "base_token": "SATS"
-  },
-  "AXS": {
-    "address": "0xbb0e17ef65f82ab018d8edd776e8dd940327b28b",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Axie Infinity Shards",
-    "priority": 1
-  },
   "AXS_BSC": {
     "address": "0x715d400f88c167884bbcc41c5fea407ed4d2f8a0",
     "chain": "bsc",
@@ -2509,46 +2421,11 @@
     "name": "Axie Infinity Shards",
     "priority": 1
   },
-  "TRX": {
-    "address": "0x50327c6c5a14dcade707abad2e27eb517df87ab5",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "TRON",
-    "priority": 1
-  },
   "TRX_BSC": {
     "address": "0xce7de646e7208a4ef112cb6ed5038fa6cc6b12e3",
     "chain": "bsc",
     "chainId": 56,
     "name": "TRON",
-    "priority": 1
-  },
-  "GMT": {
-    "address": "0xe3c408bd53c31c085a1746af401a4042954ff740",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Green Metaverse Token",
-    "priority": 2
-  },
-  "GALA": {
-    "address": "0x15D4c048F83bd7e37d49eA4C83a07267Ec4203dA",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Gala",
-    "priority": 2
-  },
-  "MAGIC": {
-    "address": "0xB0c7a3Ba49C7a6EaBa6cD4a96C55a1391070Ac9A",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "MAGIC",
-    "priority": 2
-  },
-  "ARB": {
-    "address": "0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Arbitrum",
     "priority": 1
   },
   "AKRO": {
@@ -2565,72 +2442,9 @@
     "name": "Akash Network",
     "priority": 2
   },
-  "ASTR": {
-    "address": "0xBd07dc0d2B7b81dD48a1b0aC95F7A07dB2d5B9B0",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Astar Network",
-    "priority": 2
-  },
-  "OP": {
-    "address": "0x4200000000000000000000000000000000000042",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Optimism",
-    "priority": 1
-  },
-  "LSK": {
-    "address": "0x6033368e4a402605294c91cf5c03d72bd96e1715",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Lisk",
-    "priority": 2
-  },
-  "HIVE": {
-    "address": "0x2ccbff3a042c68716ed2a2cb0c544a9f1d1935e1",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Hive",
-    "priority": 3
-  },
-  "STEEM": {
-    "address": "0xd7EFB00d12C2c13131FD319336Fdf952525dA2af",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Steem",
-    "priority": 3
-  },
-  "XLM": {
-    "address": "0x7E2af0bE3A9d9F7F6E8F1E05F5F9B36A7A5A5e3A",
-    "chain": "bsc",
-    "chainId": 56,
-    "name": "Stellar Lumens",
-    "priority": 2
-  },
-  "NEO": {
-    "address": "0xf46Db7163685c5A0e6e3A1f6a0E36B52C3C6C0BA",
-    "chain": "bsc",
-    "chainId": 56,
-    "name": "Neo",
-    "priority": 2
-  },
-  "GAS": {
-    "address": "0xe84b788A44F03CA14E8Bc8bbC73Ff3da37C936cd",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Gas",
-    "priority": 3
-  },
-  "ONT": {
-    "address": "0xd7efd73b77e6c2b8a0c2ac3c57b5a9c8e8b6c6a7",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Ontology",
-    "priority": 2
-  },
   "KDA": {
     "address": "0x8A8B7C1F8B35A5E4C8A6E4D8C9A9B3D4B5A6C7E8",
-    "chain": "ethereum", 
+    "chain": "ethereum",
     "chainId": 1,
     "name": "Kadena",
     "priority": 3
@@ -2641,34 +2455,6 @@
     "chainId": 1,
     "name": "Nervos Network",
     "priority": 3
-  },
-  "XVG": {
-    "address": "0x5a0f0a3d8a7c6d5e8f1a2b3c4d5e6f7g8h9i0j1",
-    "chain": "bsc",
-    "chainId": 56,
-    "name": "Verge",
-    "priority": 3
-  },
-  "BCH": {
-    "address": "0x8fF795a6F4D97E7887C79beA79aba5cc76444aDf",
-    "chain": "bsc",
-    "chainId": 56,
-    "name": "Bitcoin Cash",
-    "priority": 1
-  },
-  "LTC": {
-    "address": "0x4338665cbb7b2485a8855a139b75d5e34ab0db94",
-    "chain": "bsc",
-    "chainId": 56,
-    "name": "Litecoin",
-    "priority": 1
-  },
-  "JUP": {
-    "address": "0x4B1E80cAC91e2216EEb63e29B957eB91Ae9C2Be8",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Jupiter",
-    "priority": 1
   },
   "JUP_BSC": {
     "address": "0x36a8e0dc3216ab42ba40a88121448c8eb3082a8e",
@@ -2684,75 +2470,12 @@
     "name": "Jupiter",
     "priority": 1
   },
-  "TNSR": {
-    "address": "TNSRxcUxoT9xBG3de7PiJyTDYu7kskLqcpddxnEJAS6",
-    "chain": "solana",
-    "chainId": 101,
-    "name": "Tensor",
-    "priority": 2
-  },
-  "APT": {
-    "address": "0x4ca0dcb57b2c58553dc8ec4c8f8a26db10618c6b",
-    "chain": "bsc",
-    "chainId": 56,
-    "name": "Aptos",
-    "priority": 1
-  },
-  "EDU": {
-    "address": "0x24B1825b2FAAE9F1e4eAAA5B0E7E76dC1e1b5dF1",
-    "chain": "bsc",
-    "chainId": 56,
-    "name": "Education Coin",
-    "priority": 3
-  },
-  "JASMY": {
-    "address": "0x7420B4b9a0110cdC71fB720908340C03F9Bc03EC",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "JasmyCoin",
-    "priority": 2
-  },
-  "GLM": {
-    "address": "0x7DD9c5Cba05E151C895FDe1CF355C9A1D5DA6429",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Golem",
-    "priority": 3
-  },
   "GLMR": {
     "address": "0x875f103d76f4c84c99066573959cf67d6d34b9a6",
     "chain": "ethereum",
     "chainId": 1,
     "name": "Moonbeam",
     "priority": 2
-  },
-  "ANKR": {
-    "address": "0x8290333cef9e6d528dd5618fb97a76f268f3edd4",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Ankr Network",
-    "priority": 1
-  },
-  "API3": {
-    "address": "0x0b38210ea11411557c13457d4da7dc6ea731b88a",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "API3 Token",
-    "priority": 2
-  },
-  "AUDIO": {
-    "address": "0x18aaa7115705e8be94bffebde57af9bfc265b998",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Audius",
-    "priority": 2
-  },
-  "BAND": {
-    "address": "0xba11d00c5f74255f56a5e366f4f77f5a186d7f55",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Band Protocol",
-    "priority": 1
   },
   "AMB": {
     "address": "0x4dc3643dbc642b72c158e7f3d2ff232df61cb6ce",
@@ -2768,46 +2491,47 @@
     "name": "Amp",
     "priority": 2
   },
-  "ARB": {
-    "address": "0xB50721BCf8d664c30412Cfbc6cf7a15145234ad1",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Arbitrum",
-    "priority": 1
-  },
-  "BLUR": {
-    "address": "0x5283d291dbcf85356a21ba090e6db59121208b44",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Blur",
-    "priority": 2
-  },
-  "ENJ": {
-    "address": "0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Enjin Coin",
-    "priority": 2
-  },
-  "ENS": {
-    "address": "0xc18360217d8f7ab5e7c516566761ea12ce7f9d72",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Ethereum Name Service",
-    "priority": 2
-  },
-  "OG": {
-    "address": "0x4b948d64de1f71fcd12fb586f4c776421a35b3ee",
-    "chain": "ethereum",
-    "chainId": 1,
-    "name": "Zero Gravity",
-    "priority": 2
-  },
   "AAPLX": {
     "address": "XsbEhLAtcf6HdfpFZ5xEMdqW8nfAvcsP5bdudRLJzJp",
     "chain": "solana",
     "chainId": 101,
     "name": "Apple tokenized stock",
     "priority": 3
+  },
+  "BABYDOGE": {
+    "address": "0xc748673057861a797275CD8A068AbB95A902e8de",
+    "chain": "bsc",
+    "chainId": 56,
+    "name": "Baby Doge Coin"
+  },
+  "ELON": {
+    "address": "0x761D38e5ddf6ccf6Cf7c55759d5210750B5D60F3",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Dogelon Mars"
+  },
+  "BTCB": {
+    "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+    "chain": "bsc",
+    "chainId": 56,
+    "name": "Bitcoin BEP20"
+  },
+  "WETH": {
+    "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+    "chain": "bsc",
+    "chainId": 56,
+    "name": "Wrapped Ether"
+  },
+  "BRETT": {
+    "address": "0x532f27101965dd16442E59d40670FaF5eBB142E4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Brett"
+  },
+  "DEGEN": {
+    "address": "0x4ed4E862860beD51a9570b96d89aF5E1B0Efefed",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Degen"
   }
 }
