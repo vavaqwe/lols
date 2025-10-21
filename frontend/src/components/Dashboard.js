@@ -43,7 +43,11 @@ const Dashboard = ({ onLogout }) => {
   const handleBotToggle = async () => {
     try {
       const endpoint = botStatus.running ? 'stop' : 'start';
-      await axios.post(
+      const action = botStatus.running ? 'зупинки' : 'запуску';
+      
+      console.log(`🤖 Спроба ${action} бота через /api/bot/${endpoint}`);
+      
+      const response = await axios.post(
         `/api/bot/${endpoint}`,
         {},
         {
@@ -52,9 +56,24 @@ const Dashboard = ({ onLogout }) => {
           }
         }
       );
-      fetchBotStatus();
+      
+      console.log(`✅ Відповідь сервера:`, response.data);
+      
+      // 🔄 КРИТИЧНО: Оновлюємо статус та дані одразу після зміни
+      await fetchBotStatus();
+      await fetchDashboardData();
+      
+      // Показуємо успішне повідомлення
+      if (response.data.success) {
+        console.log(`✅ Бот успішно ${botStatus.running ? 'зупинено' : 'запущено'}!`);
+      }
     } catch (error) {
-      alert('Помилка управління ботом');
+      console.error('❌ Помилка управління ботом:', error);
+      const errorMsg = error.response?.data?.error || error.message || 'Невідома помилка';
+      alert(`Помилка управління ботом: ${errorMsg}`);
+      
+      // 🔄 Оновлюємо статус навіть після помилки
+      await fetchBotStatus();
     }
   };
 
