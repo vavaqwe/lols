@@ -483,8 +483,8 @@ class DexCheckClient:
                 logging.debug(f"🔄 {symbol}: No BSC/ETH pairs found in search")
                 return None
             
-            # Сортуємо за ліквідністю
-            pairs = sorted(filtered_pairs[:15], 
+            # 🚀 ЗБІЛЬШЕНО ЛІМІТ: Сортуємо за ліквідністю (було 15, стало 100 для максимального покриття)
+            pairs = sorted(filtered_pairs[:100], 
                           key=lambda p: float(p.get('liquidity', {}).get('usd', 0)), 
                           reverse=True)
             
