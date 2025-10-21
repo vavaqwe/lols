@@ -17,18 +17,28 @@ const Auth = ({ onLogin }) => {
     setError('');
 
     try {
+      console.log('🔐 Спроба входу...');
+      
       const response = await axios.post(
         `/api/auth/login`,
         formData
       );
 
+      console.log('✅ Відповідь сервера:', response.data);
+
       if (response.data.success) {
+        console.log('✅ Вхід успішний! Токен отримано');
+        // 🔄 КРИТИЧНО: Очищаємо старі дані перед входом
+        localStorage.removeItem('dashboard-cache');
         onLogin(response.data.token);
       } else {
+        console.error('❌ Вхід неуспішний:', response.data);
         setError('Помилка входу');
       }
     } catch (err) {
-      setError(err.response?.data?.detail || 'Помилка підключення до сервера');
+      console.error('❌ Помилка входу:', err);
+      const errorDetail = err.response?.data?.detail || err.message || 'Помилка підключення до сервера';
+      setError(errorDetail);
     } finally {
       setLoading(false);
     }
