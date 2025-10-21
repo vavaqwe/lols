@@ -254,7 +254,7 @@ def api_bot_status():
         positions_info = bot.get_positions_by_account()
         
         return jsonify({
-            'running': bot_status['trading_bot'] == 'running',
+            'running': bot.bot_running,  # 🔧 ВИПРАВЛЕНО: використовуємо реальний статус з bot.py
             'uptime': f"Запущено о {bot_status['start_time']}",
             'pairs_scanned': 790,
             'active_positions': positions_info['total'],
@@ -262,13 +262,91 @@ def api_bot_status():
             'account_2_positions': positions_info['account_2_count'],
             'total_profit': 12.45,
             'last_signal': 'CELR/USDT +3.48% spread',
-            'xt_connection': 'Connected' if bot_status['trading_bot'] == 'running' else 'Disconnected',
+            'xt_connection': 'Connected' if bot.bot_running else 'Disconnected',
             'monitoring': bot_status['monitoring'] == 'running',
             'telegram_bot': bot_status['telegram_bot'] == 'running'
         })
     except Exception as e:
         logging.error(f"Помилка API bot status: {e}")
         return jsonify({'error': str(e), 'running': False}), 500
+
+@app.route('/api/bot/start', methods=['POST'])
+def api_bot_start():
+    """🚀 API endpoint для запуску бота (React frontend)"""
+    try:
+        logging.info("🚀 React frontend: Запит на запуск бота")
+        
+        # Перевіряємо чи бот вже запущений
+        if bot.bot_running:
+            logging.warning("⚠️ Бот вже запущений!")
+            return jsonify({
+                'success': True,
+                'message': 'Бот вже працює',
+                'running': True
+            }), 200
+        
+        # Запускаємо бота через restart_workers (безпечний рестарт)
+        logging.info("🔄 Запускаємо bot.restart_workers()...")
+        bot.restart_workers()
+        
+        bot_status['trading_bot'] = 'running'
+        bot_status['monitoring'] = 'running'
+        
+        logging.info("✅ Бот успішно запущено!")
+        return jsonify({
+            'success': True,
+            'message': 'Торговий бот запущено успішно',
+            'running': True
+        }), 200
+        
+    except Exception as e:
+        logging.error(f"❌ Помилка запуску бота: {e}")
+        import traceback
+        logging.error(f"Traceback: {traceback.format_exc()}")
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'running': False
+        }), 500
+
+@app.route('/api/bot/stop', methods=['POST'])
+def api_bot_stop():
+    """🛑 API endpoint для зупинки бота (React frontend)"""
+    try:
+        logging.info("🛑 React frontend: Запит на зупинку бота")
+        
+        # Перевіряємо чи бот запущений
+        if not bot.bot_running:
+            logging.warning("⚠️ Бот вже зупинений!")
+            return jsonify({
+                'success': True,
+                'message': 'Бот вже зупинений',
+                'running': False
+            }), 200
+        
+        # Зупиняємо бота через stop_all_workers (безпечна зупинка)
+        logging.info("🔴 Викликаємо bot.stop_all_workers()...")
+        bot.stop_all_workers()
+        
+        bot_status['trading_bot'] = 'stopped'
+        bot_status['monitoring'] = 'stopped'
+        
+        logging.info("✅ Бот успішно зупинено!")
+        return jsonify({
+            'success': True,
+            'message': 'Торговий бот зупинено успішно',
+            'running': False
+        }), 200
+        
+    except Exception as e:
+        logging.error(f"❌ Помилка зупинки бота: {e}")
+        import traceback
+        logging.error(f"Traceback: {traceback.format_exc()}")
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'running': bot.bot_running  # Повертаємо реальний статус
+        }), 500
 
 @app.route('/api/trading-history')
 def api_trading_history():
