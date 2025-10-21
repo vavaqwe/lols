@@ -30,21 +30,27 @@ const Dashboard = ({ onLogout }) => {
 
   const fetchDashboardData = async () => {
     try {
+      console.log('📊 Завантаження dashboard даних...');
       const response = await axios.get('/api/dashboard-data');
+      console.log('✅ Dashboard дані отримано:', response.data);
       setData(response.data);
+      setLoading(false);
     } catch (error) {
-      console.error('Помилка отримання даних:', error);
-    } finally {
+      console.error('❌ Помилка отримання даних:', error);
+      console.error('Деталі помилки:', error.response?.data);
       setLoading(false);
     }
   };
 
   const fetchBotStatus = async () => {
     try {
+      console.log('🤖 Завантаження статусу бота...');
       const response = await axios.get('/api/bot/status');
+      console.log('✅ Статус бота отримано:', response.data);
       setBotStatus(response.data);
     } catch (error) {
-      console.error('Помилка отримання статусу бота:', error);
+      console.error('❌ Помилка отримання статусу бота:', error);
+      console.error('Деталі помилки:', error.response?.data);
     }
   };
 
