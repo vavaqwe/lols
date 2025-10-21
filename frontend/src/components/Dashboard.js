@@ -8,8 +8,16 @@ const Dashboard = ({ onLogout }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchDashboardData();
-    fetchBotStatus();
+    console.log('🎯 Dashboard монтовано, починаємо завантаження даних...');
+    
+    // 🔄 КРИТИЧНО: Примусове оновлення при монтуванні
+    const loadInitialData = async () => {
+      await fetchDashboardData();
+      await fetchBotStatus();
+      console.log('✅ Початкові дані завантажено');
+    };
+    
+    loadInitialData();
     
     // Оновлення кожні 10 секунд
     const interval = setInterval(() => {
