@@ -24,6 +24,8 @@ from dex_client import get_dex_price_simple, get_dex_token_info, get_advanced_to
 import logging
 from datetime import datetime
 import threading
+import asyncio
+from dex_async import batch_fetch_spreads, AsyncDEXWrapper
 
 # XT.com - ДВА ПАРАЛЕЛЬНИХ АКАУНТИ
 xt_account_1 = create_xt(api_key=XT_API_KEY, api_secret=XT_API_SECRET, account_name="Account 1")  # Перший акаунт

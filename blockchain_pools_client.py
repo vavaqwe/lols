@@ -37,10 +37,17 @@ class BlockchainPoolsClient:
     """
     
     def __init__(self):
-        # 🔗 RPC з'єднання (Ankr Premium endpoints)
-        self.ethereum_rpc = "https://rpc.ankr.com/eth/9276689ff4f125c6132d230d9adfc6be222f8c7d8444fb251cb0c8ccff295d70"
-        self.bsc_rpc = "https://rpc.ankr.com/bsc/9276689ff4f125c6132d230d9adfc6be222f8c7d8444fb251cb0c8ccff295d70"
-        self.solana_rpc = "https://rpc.ankr.com/solana/9276689ff4f125c6132d230d9adfc6be222f8c7d8444fb251cb0c8ccff295d70"
+        # 🔗 RPC з'єднання з ENV змінних з fallback
+        import os
+        self.ethereum_rpc = os.getenv('ETH_RPC_URL', "https://rpc.ankr.com/eth/9276689ff4f125c6132d230d9adfc6be222f8c7d8444fb251cb0c8ccff295d70")
+        self.bsc_rpc = os.getenv('BSC_RPC_URL', "https://rpc.ankr.com/bsc/9276689ff4f125c6132d230d9adfc6be222f8c7d8444fb251cb0c8ccff295d70")
+        self.solana_rpc = os.getenv('SOL_RPC_URL', "https://rpc.ankr.com/solana/9276689ff4f125c6132d230d9adfc6be222f8c7d8444fb251cb0c8ccff295d70")
+
+        # 🔄 Reconnect параметри
+        self.max_retries = 3
+        self.retry_delay = 2
+        self.last_connection_check = 0
+        self.connection_check_interval = 60
         
         # 🌐 Ініціалізація клієнтів
         self.w3_eth = None
@@ -48,14 +55,10 @@ class BlockchainPoolsClient:
         self.solana_client = None
         
         if WEB3_AVAILABLE:
-            try:
-                self.w3_eth = Web3(Web3.HTTPProvider(self.ethereum_rpc))
-                self.w3_bsc = Web3(Web3.HTTPProvider(self.bsc_rpc))
-                logging.info("✅ Ethereum/BSC Web3 з'єднання встановлено")
-            except Exception as e:
-                logging.error(f"❌ Помилка Web3 ініціалізації: {e}")
-                self.w3_eth = None
-                self.w3_bsc = None
+            self._init_web3_connections()
+        else:
+            self.w3_eth = None
+            self.w3_bsc = None
         
         if SOLANA_AVAILABLE:
             try:
@@ -136,9 +139,71 @@ class BlockchainPoolsClient:
             'successful_prices': 0
         }
         
+        # 📊 Heartbeat для діагностики
+        self.last_heartbeat = time.time()
+        self.heartbeat_interval = 30
+
         logging.info(f"🚀 Blockchain Pools Client ініціалізовано")
         logging.info(f"📊 Підтримувані мережі: Ethereum={WEB3_AVAILABLE}, BSC={WEB3_AVAILABLE}, Solana={SOLANA_AVAILABLE}")
         logging.info(f"📊 Підтримується {len(self.pools['ethereum'])} Ethereum + {len(self.pools['bsc'])} BSC + {len(self.pools['solana'])} Solana токенів")
+
+    def _init_web3_connections(self):
+        """Ініціалізує Web3 з'єднання з retry логікою"""
+        try:
+            from web3.middleware import geth_poa_middleware
+
+            self.w3_eth = Web3(Web3.HTTPProvider(self.ethereum_rpc, request_kwargs={'timeout': 30}))
+            self.w3_bsc = Web3(Web3.HTTPProvider(self.bsc_rpc, request_kwargs={'timeout': 30}))
+
+            # BSC потребує POA middleware
+            self.w3_bsc.middleware_onion.inject(geth_poa_middleware, layer=0)
+
+            # Перевіряємо з'єднання
+            if self.w3_eth.is_connected():
+                logging.info(f"✅ Ethereum підключено: block {self.w3_eth.eth.block_number}")
+            else:
+                logging.warning("⚠️ Ethereum не підключено")
+
+            if self.w3_bsc.is_connected():
+                logging.info(f"✅ BSC підключено: block {self.w3_bsc.eth.block_number}")
+            else:
+                logging.warning("⚠️ BSC не підключено")
+
+        except Exception as e:
+            logging.error(f"❌ Помилка Web3 ініціалізації: {e}")
+            self.w3_eth = None
+            self.w3_bsc = None
+
+    def _ensure_connection(self, network: str):
+        """Перевіряє та відновлює з'єднання при необхідності"""
+        now = time.time()
+        if now - self.last_connection_check < self.connection_check_interval:
+            return True
+
+        self.last_connection_check = now
+
+        try:
+            if network == 'ethereum' and self.w3_eth:
+                if not self.w3_eth.is_connected():
+                    logging.warning("🔄 Ethereum reconnecting...")
+                    self._init_web3_connections()
+                return self.w3_eth and self.w3_eth.is_connected()
+            elif network == 'bsc' and self.w3_bsc:
+                if not self.w3_bsc.is_connected():
+                    logging.warning("🔄 BSC reconnecting...")
+                    self._init_web3_connections()
+                return self.w3_bsc and self.w3_bsc.is_connected()
+            return False
+        except:
+            return False
+
+    def _log_heartbeat(self):
+        """Логує heartbeat кожні 30 секунд"""
+        now = time.time()
+        if now - self.last_heartbeat >= self.heartbeat_interval:
+            self.last_heartbeat = now
+            stats = self.get_stats()
+            logging.info(f"💓 Blockchain heartbeat: {stats['total_requests']} requests, {stats['success_rate_percent']:.1f}% success, cache {stats['cache_hit_rate_percent']:.1f}%")
     
     def _get_real_bsc_pools(self):
         """
@@ -203,14 +268,20 @@ class BlockchainPoolsClient:
         💎 ETHEREUM UNISWAP V2 ЦІНИ
         Отримання ціни напряму з Uniswap пулу
         """
+        self._log_heartbeat()
+
         if not WEB3_AVAILABLE or not self.w3_eth:
             return None
-        
+
+        if not self._ensure_connection('ethereum'):
+            logging.warning(f"❌ Ethereum з'єднання недоступне для {symbol}")
+            return None
+
         cache_key = self._get_cache_key(symbol, 'ethereum')
         cached_price = self._get_from_cache(cache_key)
         if cached_price:
             return cached_price
-        
+
         self.stats['ethereum_requests'] += 1
         
         try:
@@ -253,17 +324,23 @@ class BlockchainPoolsClient:
     
     def get_bsc_price(self, symbol: str) -> Optional[float]:
         """
-        🟡 BSC PANCAKESWAP V2 ЦІНИ  
+        🟡 BSC PANCAKESWAP V2 ЦІНИ
         Отримання ціни напряму з PancakeSwap пулу
         """
+        self._log_heartbeat()
+
         if not WEB3_AVAILABLE or not self.w3_bsc:
             return None
-        
+
+        if not self._ensure_connection('bsc'):
+            logging.warning(f"❌ BSC з'єднання недоступне для {symbol}")
+            return None
+
         cache_key = self._get_cache_key(symbol, 'bsc')
         cached_price = self._get_from_cache(cache_key)
         if cached_price:
             return cached_price
-        
+
         self.stats['bsc_requests'] += 1
         
         try:
